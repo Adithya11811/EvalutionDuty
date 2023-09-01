@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nmamit</title>
+    <link href="styles4.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bgcol">
+      <div class="img">
+        <img
+          src="nitte-nmam.png"
+          width="500"
+          height="90"
+          alt=""
+        />
+      </div>
+      <div class="usertags">
+        <button onclick='window.location.href="/"'>Logout</button>
+      </div>
+      <div class="tables">
+        <table>
+          <thead>
+            <th class="th">Date</th>
+            <th>session</th>
+            <th>Total slots</th>
+            <th>Remaining slots</th>
+            <th>Select your slots</th>
+          </thead>
+          <tbody>
+            <% if(morn_session.length>0 || aft_session.length>0){%>
+                <% for(let i = 0;i<morn_session.length;i++){ %>
+                    <tr>
+                        <td ><%- morn_session[i].date %></td>
+                        <td ><%- morn_session[i].session %></td>
+                        <td ><%- morn_session[i].total_slot %></td>
+                        <td><%- morn_session[i].rem_slot %></td>
+                        <% if(morn_session[i].rem_slot===0) {%>
+                            <td> no more slots available</td>
+                        <% }else{ %>
+                            <td>
+                                <button onclick="window.location.href='/admin/selslots?date=<%= morn_session[i].date %>&session=<%= morn_session[i].session %>'">Select Slot</button>
+                            </td>
+                         <% } %>
+                    </tr>
+                <% } %>
+                <% for(let i = 0;i<aft_session.length;i++){ %>
+                    <tr>
+                        <td><%- aft_session[i].date %></td>
+                        <td><%- aft_session[i].session %></td>
+                        <td><%- aft_session[i].total_slot %></td>
+                        <td><%- aft_session[i].rem_slot %></td>
+                        <% if(aft_session[i].rem_slot===0) {%>
+                            <td> no more slots available </td>
+                        <% } else { %>
+                        <td > <button onclick="window.location.href='/admin/selslots?date=<%= aft_session[i].date %>&session=<%= aft_session[i].session %>'">Select Slot</button>
+                         <% } %>
+                    </td>
+                    </tr>
+                <% } %>
+            <% }else{ %>
+                <h3>No data found</h3>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+ 

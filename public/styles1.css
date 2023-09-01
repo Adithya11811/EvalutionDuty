@@ -1,0 +1,259 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.bg {
+  position: absolute;
+  background: linear-gradient(
+    to bottom right,
+    rgba(65, 118, 179, 0.63),
+    rgb(151, 190, 211),
+    #157378,
+    black
+  );
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 500px;
+}
+
+.image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  filter: contrast;
+  background-color: rgb(165, 197, 236,0);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+.center h1 {
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid silver;
+}
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+form .txtfield {
+  position: relative;
+  border-bottom: 2px solid rgb(225, 111, 111);
+  margin: 30px 0;
+}
+.txtfield input {
+  width: 150px;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 14px;
+  border: lavenderblush;
+  outline: none;
+}
+.txtfield label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #454144;
+  transform: translateY(-10%);
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.txtfield span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #5b75c3;
+  transition: 0.5s;
+}
+.txtfield input:focus ~ label,
+.txtfield input:valid ~ label {
+  top: -20px;
+}
+.txtfield input:focus ~ span::before,
+.txtfield input:valid ~ span::before {
+  width: 100%;
+}
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  background: #1e2129;
+  border: 2px solid #37b6ff;
+  border-radius: 25px;
+  font-size: 15px;
+  color: azure;
+  font-weight: bold;
+  margin-bottom: 20px;
+  cursor: pointer;
+  overflow: hidden;
+}
+input[type="submit"]:hover {
+  background-color: #35517a;
+  color: #000000;
+  transition: 0.2s;
+}
+.home a {
+  display: flex;
+  color: #0d1217;
+  margin-top: 4%;
+  margin-left: 5%;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: #aab9f6;
+  position: absolute;
+  padding: 1vh;
+  border-radius: 10px;
+}
+.home a:hover {
+  position: absolute;
+  padding: 1vh;
+  background-color: #1e2129;
+  border-radius: 20%;
+  color: aliceblue;
+}
+@media screen and (min-width: 600px) {
+  .bg {
+    /* width: 80vh;
+    height: inherit; */
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .image {
+    border-radius: 5px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    filter: contrast;
+  }
+  .txtfield input {
+    width: 150px;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 20px;
+    border: lavenderblush;
+    outline: none;
+  }
+  .txtfield label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #7f737c;
+    transform: translateY(-10%);
+    font-size: 18px;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  .home a {
+    font-size: 20px;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 46%;
+  }
+  .center h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+  }
+  .center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 964px) {
+  .bg {
+    width: 195vh;
+    height: 162vh;
+  }
+  .image {
+    border-radius: 5px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    filter: contrast;
+    background-color: rgb(116, 243, 255, 0);
+  }
+  .txtfield input {
+    width: 150px;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 20px;
+    border: lavenderblush;
+    outline: none;
+  }
+  .txtfield label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #7f737c;
+    transform: translateY(-10%);
+    font-size: 18px;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  .home a {
+    font-size: 20px;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 46%;
+  }
+  .center h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+  }
+  .center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  img{
+    height: 55px;
+  }
+}
+@media screen and (min-width: 320px) {
+    .bg {
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+    .center{
+        top :60%;
+        width: 300px;
+    }
+    img{
+        height: 45px;
+    }
+  }

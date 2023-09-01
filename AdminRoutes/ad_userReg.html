@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nmamit</title>
+    <link href="styles3.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bgcol">
+      <div class="divblock">
+        <div class="nav">
+          <ul>
+            <li><button class="tags" onclick="window.location.href=''">Home</button></li>
+            <li>
+              <button class="tags" onclick="showPanel(1)">
+                <a>User addition</a>
+              </button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(2)">
+                User deletion
+              </button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(0)">
+                <a href="/admin/slotBook">Slot Creation</a>
+              </button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(3)">
+                <a>Slot deletion</a>
+              </button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(4)">
+                <a href="/admin/reports">Reports</a>
+              </button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(5)">
+                <a>Pending Faculties</a>
+              </button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(6)">
+                <a>Timings</a>
+              </button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(7)">
+                <a>Send Mails</a>
+              </button>
+            </li>
+            <li>
+              <button class="b1"><a href="/">logout</a></button>
+            </li>
+          </ul>
+        </div>
+        <div class="div1">
+          <div class="img">
+            <img
+              src="nitte-nmamit-logo.png"
+              width="500"
+              height="90"
+              alt=""
+            />
+          </div>
+          <div class="welcome1">
+            <h2><u>Welcome Admin</u></h2>
+          </div>
+
+          <div class="slots">
+            <form class="form2" action="/admin/userReg" method="post">
+              <h2>User Addition</h2>
+              <hr />
+              <div class="input2">
+                <div class="contents">
+                  <div class="slotdate">
+                    <div>
+                      <label class="lab1">Name</label>
+                      <input type="text" name="fac_name" />
+                    </div>
+                    <div>
+                      <label class="lab1">FacultyId</label>
+                      <input type="text" name="fac_id"  />
+                    </div>
+                    <div>
+                      <label class="lab1">designation</label>
+                      <select  name="fac_des">
+                        <option value="1">Asst prof GD1</option>
+                        <option value="2">Asst prof GD2</option>
+                        <option value="3">Asst prof GD3</option>
+                        <option value="4">Ass prof</option>
+                        <option value="5">Prof</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="lab1">Branch</label>
+                      <select  name="branch">
+                        <option value="AIML">AIML</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ISE">ISE</option>
+                        <option value="CCE">CCE</option>
+                        <option value="MECH">MECH</option>
+                        <option value="CIVIL">CIVIL</option>
+                        <option value="BIO">BIO-Tech</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="lab1">Email</label>
+                      <input type="email" name="email"/>
+                    </div>
+                    <div>
+                      <label class="lab1">Phone no</label>
+                      <input type="text" accept="number" name="contact" />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="buttons">
+                    <button id="b2" type="submit"><a href="">Submit</a></button>
+                    <button id="b2" type="reset">Reset</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="bulkslots">
+            <h3>Bulk user Entry</h3>
+
+            <form action="/admin/bulkUser" method="post" enctype="multipart/form-data">
+              <input type="file" name="userRegFile" accept="csv" />
+              <input type="submit"  value="Store File" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

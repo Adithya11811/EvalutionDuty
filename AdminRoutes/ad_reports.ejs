@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="/admin/reports" method="post">
+        <label class="">Date and Session: </label>
+        <select name="date_session">
+          <% if (morn_results.length > 0) { %> <% for (let i = 0; i <
+          morn_results.length; i++) { %>
+          <option
+            value="<%= morn_results[i].date + '|' + morn_results[i].session %>"
+          >
+            <%= morn_results[i].date %> - <%= morn_results[i].session %>
+          </option>
+          <% } %> <% } %> <% if (aft_results.length > 0) { %> <% for (let i = 0;
+          i < aft_results.length; i++) { %>
+          <option
+            value="<%= aft_results[i].date + '|' + aft_results[i].session %>"
+          >
+            <%= aft_results[i].date %> - <%= aft_results[i].session %>
+          </option>
+          <% } %> <% } %>
+        </select>
+        <button type="submit">Go</button>
+      </form>
+      <div>
+        <% if (report_results && report_results.length > 0) { %>
+        <h3><%= report_results[0].date + ' ' + report_results[0].session %></h3>
+        <table style="border: 1px solid black">
+          <thead>
+            <th>sl_no</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>designation</th>
+            <th>branch</th>
+            <th>Yippe</th>
+          </thead>
+          <tbody>
+            <% if (report_results && report_results.length > 0) { %> <% for (let
+            i = 0; i < report_results.length; i++) { %>
+            <tr>
+              <td><%- i+1 %></td>
+              <td><%- report_results[i].id %></td>
+              <td><%- report_results[i].name %></td>
+              <td><%- report_results[i].designation %></td>
+              <td><%- report_results[i].department %></td>
+              <td></td>
+            </tr>
+            <% } %> <% } else { %>
+            <tr>
+              <td colspan="6">No results found.</td>
+            </tr>
+            <% } %> <% } else {%>
+            <h1>No results</h1>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+      <button onclick="">Print</button>
+    </div>
+  </body>
+</html>

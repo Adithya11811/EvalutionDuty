@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    
+}
+.img{
+    display: flex;
+    justify-content:center;
+    position: relative;
+    padding-top: 10px;
+margin-bottom: 10px;
+}
+.bgcol{
+    
+    height:100vh;
+        background:linear-gradient(to bottom right,#172b39,white,#0b4a4d,black);
+        margin:auto;
+    }
+.usertags{
+    display: flex;
+    justify-content: space-between;
+    margin: 5vh;
+    
+}
+.usertags button{
+    background-color: rgb(245, 140, 74);
+    color: aliceblue;
+    border: none;
+    font-size: 17px;
+    padding: .5vh;
+    
+    font-weight: 200;
+    font-family: 'Poppins',sans-serif;
+   
+}
+.usertags button:hover{
+    color:aquamarine;
+    background-color: black;
+    border-radius: 5px;
+
+}
+.tables{
+    display: flex;
+    justify-content: center;
+   background-color: #fff4;
+margin-left: 30%;
+margin-right: 30%;
+border-radius: .5rem;
+box-shadow: 0 .5rem .8rem rgb(23, 23, 23);
+}
+table,th,td{
+    padding: 1rem;
+    border-collapse: collapse;
+}
+table{
+    background-color: rgba(240, 248, 255, 0.7);
+    margin: .5rem auto;
+    border-radius: .5rem;
+    overflow: auto;                                                    
+}
+thead th{
+    position: sticky;
+    /* background-color: #b29be7fe; */
+    top: 0;
+left: 0;
+border-top-left-radius:.5rem ;
+border-bottom-left-radius:.5rem ;
+
+
+}
+tbody tr:nth-child(even){
+    background-color: #0000010b;
+}
+tbody tr:hover{
+    background-color: #fff6;
+}
+/*
+table th{
+    background-color: black;
+    border:2px solid #fe7070;
+    padding: 5px;
+
+    color: azure;
+    
+}
+/*
+table td{
+    background-color: black;
+    border:2px solid #fe7070;
+    padding: 5px;
+
+    color: azure;
+}
+table{
+    width: 60%;
+}
+table th{
+background-color: rgb(252, 17, 56);
+} */
+
+@media screen and (max-width: 768px) {
+    .tables{
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .tables{
+        margin-left: 21%;
+        margin-right: 21%;
+    }
+}
+@media screen and (max-width: 650px) {
+    .tables{
+        margin-left: 12%;
+        margin-right: 12%;
+    }
+}

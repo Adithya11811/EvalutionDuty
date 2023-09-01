@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nmamit</title>
+    <link href="styles5.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bgcol">
+      <div class="divblock">
+        <div class="nav">
+          <ul>
+            <li><button class="tags">Home</button></li>
+            <li>
+              <button class="tags" onclick="showPanel(1)">
+                <a href="/admin/userReg">User addition</a>
+              </button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(2)">User deletion</button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(0)">Slot Creation</button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(3)">Slot deletion</button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(4)"><a href="/admin/reports">Reports</a></button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(5)">
+                Pending Faculties
+              </button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(6)">Timings</button>
+            </li>
+            <li>
+              <button class="tags" onclick="showPanel(7)">Send Mails</button>
+            </li>
+            <li>
+              <button class="b1"><a href="/">logout</a></button>
+            </li>
+          </ul>
+        </div>
+        <div class="div1">
+          <div class="img">
+            <img src="nitte-nmamit-logo.png" width="500" height="90" alt="" />
+          </div>
+          <div class="welcome1">
+            <h2><u>Welcome Admin</u></h2>
+          </div>
+
+          <div class="slots">
+            <form class="form1" action="/admin/slotBook" method="post">
+              <h2 class="heading">Slot creation</h2>
+              <hr />
+              <div class="input1">
+                <div class="contents">
+                  <div class="slotdate">
+                    <div>
+                      <label class="lab1">Date</label>
+                      <input type="date" name="date" placeholder="YYYY-MM-DD" />
+                    </div>
+                    <div>
+                      <label class="lab1">Session</label>
+                      <select  name="session">
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="lab1">Total slots</label>
+                      <input type="number" name="total_slots" placeholder="Integer">
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="buttons">
+                    <button id="b1" type="submit">Submit</a></button>
+                    <button id="b1" type="reset">Reset</a></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="bulkslots">
+            <h3>Bulk Slot Entry</h3>
+
+            <form action="/admin/bulkSlot" method="post" enctype="multipart/form-data">
+              <input type="file" name="slotFile" accept="csv" />
+              <input type="submit" value="Store File" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
